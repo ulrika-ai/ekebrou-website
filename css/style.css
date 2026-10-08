@@ -1,0 +1,632 @@
+:root {
+    /* Graphical profile */
+
+    --primary-green: #7bc143;
+    --secondary-turquoise: #009898;
+    --secondary-green: #265600;
+
+    --accent-blue: #d7ebec;
+    --accent-grey: #dcdcde;
+
+    --complement-black: #231120;
+    --complement-white: #ffffff;
+}
+
+
+/* --------------------
+   General
+-------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--navbar-height);
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: var(--complement-black);
+    background-color: var(--complement-white);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* --------------------
+   Typography
+-------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin-top: 0;
+    color: var(--secondary-green);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.15;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--complement-black);
+}
+
+h4 {
+    font-size: 1.4rem;
+    color: var(--primary-green);
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+
+p {
+    line-height: 1.4;
+}
+
+
+/* --------------------
+   Navigation
+-------------------- */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: var(--complement-white);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1400px;
+    margin: 0 auto;
+
+    padding: 0.9rem 3rem 1.1rem;
+
+    border-bottom: 1px solid var(--secondary-turquoise);
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    position: relative;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    color: var(--secondary-green);
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-turquoise);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -0.4rem;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--primary-green);
+
+    transition: width 0.2s ease;
+}
+
+/* --------------------
+   Sections
+-------------------- */
+
+section {
+    padding: 6rem 8%;
+}
+
+
+/* --------------------
+   Hero
+-------------------- */
+
+.hero {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    align-items: center;
+
+    background-color: var(--accent-grey);
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(220, 220, 222, 0.95) 0%,
+            rgba(220, 220, 222, 0.75) 35%,
+            rgba(220, 220, 222, 0.15) 60%,
+            rgba(220, 220, 222, 0) 100%
+        ),
+        url("../images/pressbild-desktop.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    width: 70%;
+    max-width: 700px;
+}
+
+
+/* --------------------
+   Services
+-------------------- */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.service-card {
+    padding: 2rem;
+
+    background-color: var(--complement-white);
+    border: 1px solid var(--accent-grey);
+    border-radius: 12px;
+}
+
+/* --------------------
+   Service Pages
+-------------------- */
+
+.service-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 7rem 0;
+}
+
+.service-page-header {
+    margin-bottom: 4rem;
+}
+
+.service-page-header h1 {
+    margin-bottom: 0.75rem;
+}
+
+.service-page-header h4 {
+    margin-bottom: 0;
+    letter-spacing: 0.05em;
+}
+
+.service-page-content {
+    max-width: 750px;
+}
+
+.service-page-content h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.service-page-content p {
+    margin-bottom: 1.5rem;
+}
+
+.service-page-content ul {
+    line-height: 1.7;
+    padding-left: 1.5rem;
+}
+
+.service-page-content li {
+    margin-bottom: 0.75rem;
+}
+
+.service-page-contact {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--accent-grey);
+}
+
+
+/* --------------------
+   Buttons
+-------------------- */
+
+.button {
+    display: inline-block;
+
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+
+    background-color: var(--primary-green);
+    color: var(--complement-black);
+
+    border-radius: 6px;
+
+    font-weight: 600;
+}
+
+.button:hover {
+    background-color: var(--secondary-turquoise);
+    color: var(--complement-white);
+}
+
+
+/* --------------------
+   Book
+-------------------- */
+
+.book {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+
+    background-color: var(--accent-blue);
+}
+
+.book-image,
+.book-content {
+    flex: 1;
+}
+
+
+/* --------------------
+   About
+-------------------- */
+
+.about {
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+}
+
+.about-image {
+    flex: 0 0 30%;
+    aspect-ratio: 1 / 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+/* --------------------
+   About Page
+-------------------- */
+
+.about-page {
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 7rem 0;
+}
+
+.about-page-image {
+    flex: 0 0 35%;
+}
+
+.about-page-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-page-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+.about-page-content h1 {
+    margin-bottom: 3rem;
+}
+
+.about-page-content p {
+    margin-bottom: 1.5rem;
+}
+
+.about-page-contact {
+    margin-top: 4rem;
+    padding-top: 3rem;
+
+    border-top: 1px solid var(--accent-grey);
+}
+
+.about-page-contact h2 {
+    margin-bottom: 1rem;
+}
+
+
+/* --------------------
+   Contact
+-------------------- */
+
+.contact {
+    text-align: center;
+    background-image: url("../images/hoga-kusten.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contact-box {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem;
+
+    background-color: color-mix(in srgb, var(--accent-blue) 85%, transparent);
+    border: 1px solid var(--accent-blue);
+
+    text-align: center;
+}
+
+.contact-box h2 {
+    margin-bottom: 1.5rem;
+}
+
+.contact-box h3 {
+    line-height: 1.6;
+}
+
+.contact-box a {
+    position: relative;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.contact-box a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -0.2rem;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--primary-green);
+
+    transition: width 0.2s ease;
+}
+
+.contact-box a:hover {
+    color: var(--secondary-turquoise);
+}
+
+.contact-box a:hover::after {
+    width: 100%;
+}
+
+/* --------------------
+   Mobile
+-------------------- */
+
+.menu-toggle {
+    display: none;
+}
+
+.mobile-title {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        padding: 0.7rem 1.5rem 1rem;
+        position: relative;
+    }
+
+    .logo img {
+        width: 130px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        width: 30px;
+        height: 22px;
+
+        padding: 0;
+        border: none;
+        background: none;
+
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--secondary-green);
+
+        transition: transform 0.25s ease;
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        background-color: var(--complement-white);
+        border-top: 1px solid var(--accent-grey);
+        border-bottom: 1px solid var(--accent-grey);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+    position: relative;
+    width: fit-content;
+    align-self: center;
+
+    padding: 1rem 0;
+    text-align: center;
+    }
+
+    .nav-links a::after {
+        bottom: 0.5rem;
+        left: 0;
+        width: 0;
+    }
+
+    .nav-links a.active::after {
+        width: 100%;
+    }
+
+    .desktop-title {
+        display: none;
+    }
+
+    .mobile-title {
+        display: block;
+    }
+
+   .hero {
+    min-height: 100vh;
+
+    align-items: flex-end;
+        padding: 10rem 4% 4rem;
+
+        background-image:
+            linear-gradient(
+                to top,
+                rgba(220, 220, 222, 0.95) 0%,
+                rgba(220, 220, 222, 0.7) 35%,
+                rgba(220, 220, 222, 0.1) 65%,
+                rgba(220, 220, 222, 0) 100%
+            ),
+            url("../images/pressbild-mobile.jpg");
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page {
+        padding: 5rem 0;
+    }
+
+    .service-page-header {
+        margin-bottom: 3rem;
+    }
+
+    .service-page-content h2 {
+        margin-top: 2.5rem;
+    }
+
+    .book {
+        flex-direction: column;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about-page {
+    flex-direction: column;
+    gap: 3rem;
+
+    padding: 4rem 6%;
+    }
+
+    .about-page-image {
+        width: 100%;
+    }
+
+    .about-page-content {
+        max-width: none;
+    }
+
+    .about-page-content h1 {
+        margin-bottom: 2rem;
+    }
+
+    section {
+        padding: 4rem 6%;
+    }
+}
